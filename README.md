@@ -82,48 +82,6 @@ npm run build
 npm run preview
 ```
 
-## 🌐 Deployment
-
-This project is configured for easy deployment to:
-
-### Vercel (Recommended)
-1. Push your code to GitHub
-2. Import the repository in Vercel
-3. Vercel will auto-detect Vite and deploy
-4. Configuration is already set in `vercel.json`
-
-### Netlify
-1. Push your code to GitHub
-2. Import the repository in Netlify
-3. Build settings are configured in `netlify.toml`
-4. Build command: `npm run build`
-5. Publish directory: `dist`
-
-Both platforms offer free hosting with automatic deployments on push.
-
-## 📱 Responsive Design
-
-- **Mobile**: 320px minimum width with optimized touch targets
-- **Tablet**: 768px breakpoint with adjusted layouts
-- **Desktop**: 1024px+ with full feature set
-- **Touch Targets**: 44px minimum for mobile accessibility
-
-## ♿ Accessibility
-
-- WCAG 2.1 Level AA compliance
-- Keyboard navigation support
-- Visible focus indicators (2px toxic green ring)
-- Semantic HTML elements
-- ARIA labels where needed
-
-## 🎯 Performance Targets
-
-- **60fps** game rendering on desktop
-- **30fps minimum** on mobile devices
-- **< 200KB** initial bundle size (gzipped)
-- **< 3 seconds** initial page load
-- **Optimized rendering** with viewport culling and object pooling
-
 ## 📄 License
 
 MIT License - Built for the Kiroween Hackathon
