@@ -1,10 +1,9 @@
 # 🧟 Night Of The Living Debt
 
-A spooky, Halloween-themed personal finance application that transforms budget tracking into an isometric tower defense game. Watch your spending habits come to life as zombies attack your financial defenses!
+A spooky, Halloween-themed personal finance application that transforms budget tracking into a fight for your life! Watch your spending habits come to life as zombies attack your financial defenses!
 
 ## 🎮 Features
 
-- **Isometric Game Visualization**: 30-degree projection with 128px per unit scale
 - **Zombie Spawning**: Overspending transactions spawn zombies that attack budget blockades
 - **Real-time Playback**: 30-45 second cinematic playback of monthly transactions
 - **Budget Defense**: Four blockades representing spending categories (Food, Entertainment, Shopping, Subscriptions)
@@ -156,7 +155,3 @@ src/
 - **`src/lib/zombieSpawning.ts`** - Zombie generation logic
 - **`src/components/game/GameCanvas.tsx`** - Main game renderer
 - **`src/constants/game.ts`** - Game configuration constants
-
-### Built With Kiro
-
-This project was built using Kiro AI IDE during the Kiroween Hackathon 2024.
