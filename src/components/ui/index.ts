@@ -11,11 +11,3 @@ export { ProgressBar } from './ProgressBar';
 export type { ProgressBarProps } from './ProgressBar';
 
 export { DemoModeToggle } from './DemoModeToggle';
-
-// Demo components
-export { ButtonDemo } from './Button.demo';
-export { CardDemo } from './Card.demo';
-export { InputDemo } from './Input.demo';
-export { ProgressBarDemo } from './ProgressBar.demo';
-export { HoverStatesDemo } from './HoverStates.demo';
-export { TouchTargetChecklist } from './TouchTargetChecklist';

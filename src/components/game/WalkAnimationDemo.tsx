@@ -22,6 +22,7 @@ export function WalkAnimationDemo() {
     spriteFrame: 0,
     direction: 'S',
     spawnedFrom: 'demo-tx',
+    visualVariant: 1,
   });
 
   const [isPlaying, setIsPlaying] = useState(true);
