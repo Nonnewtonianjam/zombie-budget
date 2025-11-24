@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-primary: #0f0a1f;
+  --color-background-secondary: #1a1230;
+  --color-background-tertiary: #251d3a;
+  --color-background-card: #2a2040;
+  
+  --color-brand-purple: #8b5cf6;
+  --color-brand-purple-light: #a78bfa;
+  --color-brand-purple-dark: #7c3aed;
+  
+  --color-accent-green: #10b981;
+  --color-accent-red: #ef4444;
+  --color-accent-orange: #f59e0b;
+  
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-600: #475569;
+  
+  --font-family-sans: Inter, system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'Fira Code', 'Courier New', monospace;
+  
+  --breakpoint-mobile: 320px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1440px;
+}
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #0f0a1f 0%, #1a1230 50%, #251d3a 100%);
+    background-attachment: fixed;
+    color: var(--color-neutral-100);
+    font-family: var(--font-family-sans);
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1a1a24;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    border-radius: 4px;
+    transition: background 200ms;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a78bfa;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 200ms ease-in-out;
+  }
+  
+  /* 
+   * Interactive Element Hover States
+   * All interactive elements have smooth color shifts and subtle scale effects
+   * - Buttons: Color shift + shadow enhancement + scale
+   * - Cards: Border color shift + shadow enhancement + scale
+   * - Inputs: Border color shift + shadow on hover
+   * - Links: Color shift to toxic green
+   */
+  .interactive-hover {
+    @apply transition-all duration-200 cursor-pointer;
+  }
+  
+  .interactive-hover:hover {
+    @apply scale-[1.02];
+  }
+  
+  .interactive-hover:active {
+    @apply scale-[0.98];
+  }
+  
+  /* Link hover states with brand purple color shift */
+  a:not(.no-hover) {
+    @apply transition-colors duration-200;
+  }
+  
+  a:not(.no-hover):hover {
+    @apply text-brand-purple-light;
+  }
+  
+  /* Focus visible for accessibility - brand purple ring */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-purple ring-offset-2 ring-offset-background-primary;
+    transition: all 200ms ease-in-out;
+  }
+  
+  /* Playback state animations */
+  .playback-active {
+    animation: playback-pulse 2s ease-in-out infinite;
+  }
+  
+  .slide-in {
+    animation: slide-in 200ms ease-out;
+  }
+  
+  .fade-in {
+    animation: fade-in 200ms ease-out;
+  }
+  
+  /* Page transition utilities */
+  .page-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Modal/overlay transitions */
+  .modal-enter {
+    animation: modal-enter 200ms ease-out;
+  }
+  
+  .modal-exit {
+    animation: modal-exit 200ms ease-in;
+  }
+  
+  /* List item transitions */
+  .list-item-enter {
+    animation: list-item-enter 200ms ease-out;
+  }
+}
+
+@keyframes shamble {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-2px) rotate(-1deg); }
+  75% { transform: translateX(2px) rotate(1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 5px currentColor); }
+  50% { opacity: 0.7; filter: drop-shadow(0 0 10px currentColor); }
+}
+
+@keyframes blood-drip {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}
+
+@keyframes fog-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+@keyframes playback-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.02); }
+}
+
+@keyframes slide-in {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes modal-enter {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95) translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+}
+
+@keyframes modal-exit {
+  from { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+  to { 
+    opacity: 0; 
+    transform: scale(0.95) translateY(-10px); 
+  }
+}
+
+@keyframes list-item-enter {
+  from { 
+    opacity: 0; 
+    transform: translateX(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
